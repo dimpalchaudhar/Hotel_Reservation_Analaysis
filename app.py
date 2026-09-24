@@ -23,7 +23,7 @@ def get_connection():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password= os.getenv("root"),
+        password= "root",
         database="hotel_reservation_analytics"
     )
 
