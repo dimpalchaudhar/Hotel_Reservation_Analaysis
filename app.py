@@ -20,10 +20,11 @@ st.set_page_config(
 @st.cache_resource
 def get_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="root",
-        database="hotel_reservation_analytics"
+        host=st.secrets["mysql"]["localhost"],
+        user=st.secrets["mysql"]["user"],
+        password=st.secrets["mysql"]["root"],
+        database=st.secrets["mysql"]["hotel_reservation_analytics"],
+        port=st.secrets["mysql"]["3306"]
     )
 
 
