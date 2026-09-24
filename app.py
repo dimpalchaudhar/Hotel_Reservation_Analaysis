@@ -2,6 +2,7 @@ import streamlit as st
 import mysql.connector
 import pandas as pd
 import plotly.express as px
+import os
 
 # ============================================================
 # PAGE CONFIGURATION
@@ -22,7 +23,7 @@ def get_connection():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="root",
+        password= os.getenv("root"),
         database="hotel_reservation_analytics"
     )
 
